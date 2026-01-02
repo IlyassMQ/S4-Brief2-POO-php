@@ -1,5 +1,5 @@
 <?php
-
+require 'User.php';
 class Patient extends User
 {
     protected string $firstName;
