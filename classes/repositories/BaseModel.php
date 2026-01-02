@@ -26,6 +26,11 @@ abstract class BaseModel
         $stmt->bindParam(':id',$id);
        return $stmt->execute();
     }
+    public function findAll(): array
+    {
+        $stmt = $this->db->query("SELECT * FROM {$this->table}");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
 
 
