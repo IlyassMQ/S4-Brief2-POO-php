@@ -1,5 +1,5 @@
 <?php
-require 'BaseModel.php';
+require_once 'BaseModel.php';
 
 class PatientRepository extends BaseModel{
 

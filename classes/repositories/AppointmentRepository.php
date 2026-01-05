@@ -1,6 +1,6 @@
 <?php
 
-require 'BaseModel.php';
+require_once 'BaseModel.php';
 class AppointmentRepository extends BaseModel
 {
     protected string $table = 'appointments';
