@@ -27,4 +27,10 @@ class SessionManager
         session_unset();
         session_destroy();
     }
+    public static function hasRole(int $role): bool
+    {
+        self::start();
+        return isset($_SESSION['user']['role']) && $_SESSION['user']['role'] === $role;
+    }
+
 }
