@@ -3,7 +3,7 @@
 require_once 'BaseModel.php';
 class AppointmentRepository extends BaseModel
 {
-    protected string $table = 'appointments';
+    private string $table = 'appointments';
 
     public function findByStatus(string $status): array
     {        

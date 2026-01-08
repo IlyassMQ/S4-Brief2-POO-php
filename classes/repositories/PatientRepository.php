@@ -3,7 +3,7 @@ require_once 'BaseModel.php';
 
 class PatientRepository extends BaseModel{
 
-    protected string $table = 'patients';
+    private string $table = 'patients';
 
     public function findByEmail(string $email){
        $stmt = $this->db->prepare("SELECT * FROM {$this->table} WHERE email = :email");

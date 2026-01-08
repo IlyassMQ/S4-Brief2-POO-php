@@ -2,9 +2,9 @@
 
 class Medication
 {
-    protected ?int $id = null;
-    protected string $name;
-    protected string $instruction;
+    private ?int $id = null;
+    private string $name;
+    private string $instruction;
 
 
     public function getId(): ?int

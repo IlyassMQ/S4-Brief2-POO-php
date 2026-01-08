@@ -3,7 +3,7 @@ require_once 'BaseModel.php';
 
 class UserRepository extends BaseModel
 {
-    protected string $table = 'users';
+    private string $table = 'users';
 
     public function findByEmail(string $email){
         $stmt = $this->db->prepare("SELECT * FROM {$this->table} WHERE email = :email LIMIT 1");

@@ -4,7 +4,7 @@ require_once 'BaseModel.php';
 class DoctorRepository extends BaseModel
 {
 
-    protected string $table = 'doctors';
+    private string $table = 'doctors';
 
     public function findBySpecialization(string $specialization){
         $stmt = $this->db->prepare("SELECT * FROM {$this->table} WHERE specialization = :specialization");

@@ -17,7 +17,9 @@ if ($user['role'] == 1) { // admin
     exit;
 }
 
-
+// fallback (later doctor / patient dashboards)
+header('Location: public/Login.php');
+exit;
 
 
 

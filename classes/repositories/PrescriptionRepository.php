@@ -2,7 +2,7 @@
 require_once 'BaseModel.php';
 class PrescriptionRepository extends BaseModel
 {
-    protected string $table = 'prescriptions';
+    private string $table = 'prescriptions';
 
     public function findByDoctor(int $doctorId): array
     {
