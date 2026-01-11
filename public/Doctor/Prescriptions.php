@@ -129,7 +129,7 @@ $medications = $medRepo->findAll();
                         <td class="p-4"><?= $pr['medication_name'] ?></td>
                         <td class="p-4"><?= $pr['dosage_instructions'] ?></td>
                         <td class="p-4">
-                            <form method="POST" action="../../actions/delete_prescription.php"
+                            <form method="POST" action="../../actions/delete/delete_prescription.php"
                                   onsubmit="return confirm('Delete prescription?');">
                                 <input type="hidden" name="id" value="<?= $pr['id'] ?>">
                                 <button class="px-3 py-1 bg-red-500 text-white rounded">

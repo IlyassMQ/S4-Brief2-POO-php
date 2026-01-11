@@ -140,7 +140,7 @@ $doctors = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <td class="p-4"><?= $d['department_name'] ?></td>
                             <td class="p-4"><?= $d['created_at'] ?></td>
                             <td class="p-4">
-                            <form method="POST" action="../../actions/delete_doctor.php" onsubmit="return confirm('Are you sure you want to delete this doctor?');">
+                            <form method="POST" action="../../actions/delete/delete_doctor.php" onsubmit="return confirm('Are you sure you want to delete this doctor?');">
                                 <input type="hidden" name="id" value="<?=$d['id']?>">
                                 <button type="submit" class="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition text-sm">
                                     Delete

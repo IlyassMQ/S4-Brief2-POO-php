@@ -82,7 +82,7 @@ $medications = $medRepo->findAll();
                             <td class="p-4"><?= htmlspecialchars($m['instructions']) ?></td>
                             <td class="p-4"><?= $m['created_at'] ?></td>
                             <td class="p-4">
-                                <form method="POST" action="../actions/delete_medication.php" onsubmit="return confirm('Are you sure you want to delete this medication?');">
+                                <form method="POST" action="../actions/delete/delete_medication.php" onsubmit="return confirm('Are you sure you want to delete this medication?');">
                                     <input type="hidden" name="id" value="<?= $m['id'] ?>">
                                     <button type="submit" class="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition text-sm">
                                         Delete

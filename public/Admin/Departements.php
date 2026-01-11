@@ -47,6 +47,7 @@ $departments = $deptRepo->findAll();
                 <th class="p-3 text-left border-b">Name</th>
                 <th class="p-3 text-left border-b">Location</th>
                 <th class="p-3 text-left border-b">Created At</th>
+                <th class="p-3 text-left border-b">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -56,6 +57,18 @@ $departments = $deptRepo->findAll();
                     <td class="p-3 border-b"><?= htmlspecialchars($dept['name']) ?></td>
                     <td class="p-3 border-b"><?= htmlspecialchars($dept['location']) ?></td>
                     <td class="p-3 border-b"><?= htmlspecialchars($dept['created_at']) ?></td>
+                    <td class="p-3 border-b">
+                    <form method="POST"
+                            action="../../actions/delete/delete_departement.php"
+                            onsubmit="return confirm('Are you sure you want to delete this department?');">
+                            <input type="hidden" name="id" value="<?= $dept['id'] ?>">
+                            <button type="submit"
+                                    class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition">
+                                Delete
+                            </button>
+                        </form>
+                    </td>
+
                 </tr>
             <?php endforeach; ?>
         </tbody>

@@ -114,6 +114,7 @@ $patients = $patientRepo->findAll();
                         <th class="p-4 text-left">Phone</th>
                         <th class="p-4 text-left">Email</th>
                         <th class="p-4 text-left">Created</th>
+                        <th class="p-4 text-left">Actions</th>
                     </tr>
                 </thead>
                 <tbody class="text-gray-700 text-sm">
@@ -128,6 +129,16 @@ $patients = $patientRepo->findAll();
                             <td class="p-4"><?=$p['phone'] ?></td>
                             <td class="p-4"><?=$p['email'] ?></td>
                             <td class="p-4"><?=$p['created_at'] ?></td>
+                            <td class="p-4">
+                            <form method="POST" action="../../actions/delete/delete_patient.php"
+                                onsubmit="return confirm('Are you sure you want to delete this patient?');">
+                                <input type="hidden" name="id" value="<?= $p['id'] ?>">
+                                <button type="submit"
+                                        class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition">
+                                    Delete
+                                </button>
+                            </form>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

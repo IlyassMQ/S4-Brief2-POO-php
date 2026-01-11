@@ -135,7 +135,7 @@ $appointments = $appointmentRepo->findAll();
                             <td class="p-4"><?= $a['time'] ?></td>
                             <td class="p-4"><?= $a['status']?></td>
                             <td class="p-4">
-                                <form method="POST" action="../actions/delete_appointment.php" onsubmit="return confirm('Are you sure?');">
+                                <form method="POST" action="../actions/delete/delete_appointment.php" onsubmit="return confirm('Are you sure?');">
                                     <input type="hidden" name="id" value="<?= $a['id'] ?>">
                                     <button type="submit"
                                             class="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition text-sm">
