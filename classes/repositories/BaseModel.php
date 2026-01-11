@@ -1,8 +1,8 @@
 <?php
 abstract class BaseModel
 {
-    private PDO $db;
-    private string $table;
+    protected PDO $db;
+    protected string $table;
 
     public function __construct(PDO $db){
             $this->db = $db;

@@ -2,12 +2,12 @@
 
 class Prescription
 {
-    private ?int $id = null;
-    private string $date;
-    private int $doctorId;
-    private int $patientId;
-    private int $medicationId;
-    private string $dosageInstruction;
+    protected ?int $id = null;
+    protected string $date;
+    protected int $doctorId;
+    protected int $patientId;
+    protected int $medicationId;
+    protected string $dosageInstruction;
 
     public function getId(): ?int
     {

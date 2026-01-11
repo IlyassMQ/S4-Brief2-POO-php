@@ -1,3 +1,6 @@
+<?php 
+require_once 'admin_protect.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,11 +34,6 @@
             <a href="Medications.php" class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center hover:shadow-xl hover:scale-105 transition transform">
                 <i data-feather="box" class="w-10 h-10 mb-3 text-yellow-500"></i>
                 <span class="text-lg font-semibold text-gray-700">Medications</span>
-            </a>
-
-            <a href="Appointments.php" class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center hover:shadow-xl hover:scale-105 transition transform">
-                <i data-feather="calendar" class="w-10 h-10 mb-3 text-red-500"></i>
-                <span class="text-lg font-semibold text-gray-700">Appointments</span>
             </a>
 
             <a href="Stats.php" class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center hover:shadow-xl hover:scale-105 transition transform">

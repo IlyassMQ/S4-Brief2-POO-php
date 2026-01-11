@@ -2,12 +2,12 @@
 require 'User.php';
 class Patient extends User
 {
-    private string $firstName;
-    private string $lastName;
-    private string $gender;
-    private string $dateOfBirth; 
-    private string $phone;
-    private string $address;
+    protected string $firstName;
+    protected string $lastName;
+    protected string $gender;
+    protected string $dateOfBirth; 
+    protected string $phone;
+    protected string $address;
 
 
     public function getFirstName(): string

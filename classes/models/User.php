@@ -2,10 +2,10 @@
 
 abstract class User
 {
-    private ?int $id = null;
-    private string $email;
-    private string $username;
-    private string $passwordHash;
+    protected ?int $id = null;
+    protected string $email;
+    protected string $username;
+    protected string $passwordHash;
 
 
     public function getId(): ?int

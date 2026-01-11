@@ -15,66 +15,86 @@ $departments = $deptRepo->findAll();
     <title>Add Doctor</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 min-h-screen p-8 font-sans">
+<body class="bg-gray-100 min-h-screen font-sans">
 
-<h2 class="text-2xl font-bold mb-6 text-gray-800">Add Doctor</h2>
+<div class="max-w-5xl mx-auto p-8">
 
-<div class="bg-white p-6 rounded-xl shadow-md max-w-md">
-    <form method="POST" action="../../actions/add_doctor.php" class="space-y-4">
+    <!-- Header -->
+    <div class="mb-8">
+        <h1 class="text-3xl font-extrabold text-gray-800">Add Doctor</h1>
+        <p class="text-gray-500 mt-1">Create a new doctor account and assign a department</p>
+    </div>
 
-        <div>
-            <label class="block font-semibold mb-1">First Name</label>
-            <input name="first_name" placeholder="First name" required
-                   class="w-full border rounded p-2 focus:ring focus:ring-blue-300">
-        </div>
+    <!-- Card -->
+    <div class="bg-white rounded-2xl shadow-lg p-8 max-w-2xl">
 
-        <div>
-            <label class="block font-semibold mb-1">Last Name</label>
-            <input name="last_name" placeholder="Last name" required
-                   class="w-full border rounded p-2 focus:ring focus:ring-blue-300">
-        </div>
+        <form method="POST" action="../../actions/add_doctor.php" class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-        <div>
-            <label class="block font-semibold mb-1">Specialization</label>
-            <input name="specialization" placeholder="Specialization"
-                   class="w-full border rounded p-2 focus:ring focus:ring-blue-300">
-        </div>
+            <div>
+                <label class="block text-sm font-semibold mb-1">First Name</label>
+                <input name="first_name" required
+                       class="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-400 focus:outline-none">
+            </div>
 
-        <div>
-            <label class="block font-semibold mb-1">Phone</label>
-            <input name="phone" placeholder="Phone"
-                   class="w-full border rounded p-2 focus:ring focus:ring-blue-300">
-        </div>
+            <div>
+                <label class="block text-sm font-semibold mb-1">Last Name</label>
+                <input name="last_name" required
+                       class="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-400 focus:outline-none">
+            </div>
 
-        <div>
-            <label class="block font-semibold mb-1">Email</label>
-            <input name="email" type="email" placeholder="Email"
-                   class="w-full border rounded p-2 focus:ring focus:ring-blue-300">
-        </div>
+            <div>
+                <label class="block text-sm font-semibold mb-1">Specialization</label>
+                <input name="specialization"
+                       class="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-400 focus:outline-none">
+            </div>
 
-        <div>
-            <label class="block font-semibold mb-1">Password</label>
-            <input type="password" name="password" placeholder="Password"
-                   class="w-full border rounded p-2 focus:ring focus:ring-blue-300">
-        </div>
+            <div>
+                <label class="block text-sm font-semibold mb-1">Phone</label>
+                <input name="phone"
+                       class="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-400 focus:outline-none">
+            </div>
 
-        <div>
-            <label class="block font-semibold mb-1">Department</label>
-            <select name="department_id" required
-                    class="w-full border rounded p-2 focus:ring focus:ring-blue-300">
-                <option value="">Select Department</option>
-                <?php foreach ($departments as $dept): ?>
-                    <option value="<?= $dept['id'] ?>"><?= htmlspecialchars($dept['name']) ?></option>
-                <?php endforeach; ?>
-            </select>
-        </div>
+            <div>
+                <label class="block text-sm font-semibold mb-1">Email</label>
+                <input name="email" type="email"
+                       class="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-400 focus:outline-none">
+            </div>
 
-        <button type="submit"
-                class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition w-full font-semibold">
-            Create Doctor
-        </button>
+            <div>
+                <label class="block text-sm font-semibold mb-1">Password</label>
+                <input type="password" name="password"
+                       class="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-400 focus:outline-none">
+            </div>
 
-    </form>
+            <div class="md:col-span-2">
+                <label class="block text-sm font-semibold mb-1">Department</label>
+                <select name="department_id" required
+                        class="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-400 focus:outline-none">
+                    <option value="">Select Department</option>
+                    <?php foreach ($departments as $dept): ?>
+                        <option value="<?= $dept['id'] ?>">
+                            <?= htmlspecialchars($dept['name']) ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+
+            <!-- Actions -->
+            <div class="md:col-span-2 flex justify-end gap-4 mt-4">
+                <a href="Doctors.php"
+                   class="px-6 py-2 rounded-lg border font-semibold text-gray-600 hover:bg-gray-100 transition">
+                    Cancel
+                </a>
+
+                <button type="submit"
+                        class="px-6 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition shadow">
+                    Create Doctor
+                </button>
+            </div>
+
+        </form>
+    </div>
+
 </div>
 
 </body>

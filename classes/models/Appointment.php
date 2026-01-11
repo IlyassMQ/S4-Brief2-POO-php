@@ -2,13 +2,13 @@
 
 class Appointment
 {
-    private ?int $id = null;
-    private string $date;
-    private string $time;
-    private int $doctorId;
-    private int $patientId;
-    private string $reason;
-    private string $status; 
+    protected ?int $id = null;
+    protected string $date;
+    protected string $time;
+    protected int $doctorId;
+    protected int $patientId;
+    protected string $reason;
+    protected string $status; 
 
     public function getId(): ?int
     {

@@ -2,11 +2,11 @@
 require 'User.php';
 class Doctor extends User
 {
-    private string $firstName;
-    private string $lastName;
-    private string $specialization;
-    private string $phone;
-    private int $departmentId;
+    protected string $firstName;
+    protected string $lastName;
+    protected string $specialization;
+    protected string $phone;
+    protected int $departmentId;
 
     public function getFirstName(): string
     {

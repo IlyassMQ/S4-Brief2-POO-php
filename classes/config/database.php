@@ -2,11 +2,11 @@
 
 class Database
 {
-    private string $host = 'localhost';
-    private string $db   = 'unitycare_poo_db';
-    private string $user = 'root';
-    private string $pass = '';
-    private ?PDO $conn = null;
+    protected string $host = 'localhost';
+    protected string $db   = 'unitycare_poo_db';
+    protected string $user = 'root';
+    protected string $pass = '';
+    protected ?PDO $conn = null;
 
     public function connect(): PDO
     {
