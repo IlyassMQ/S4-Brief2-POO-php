@@ -1,5 +1,5 @@
 <?php
-require_once '../classes/repositories/AppointementRepository.php';
+require_once '../classes/repositories/AppointmentRepository.php';
 require_once '../classes/config/database.php';
 require_once '../classes/repositories/BaseModel.php';
 

@@ -15,26 +15,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'] ?? '';
     $password = $_POST['password'] ?? '';
 
-   
-   $user = $userRepo->findByEmail($email);
+    $user = $userRepo->findByEmail($email);
 
-if (!$user) {
-    $error = 'Utilisateur introuvable';
-} elseif (!password_verify($password, $user['password_hash'])) {
-    $error = 'Mot de passe incorrect';
-} else {
-    SessionManager::setUser([
-        'id' => $user['id'],
-        'email' => $user['email'],
-        'username' => $user['username'],
-        'role' => $user['role_id']
-    ]);
-    $success = 'Connexion réussie !';
-    header('Location: Admin/Dashboard.php');
-    exit;
+    if (!$user) {
+        $error = 'Utilisateur introuvable';
+    } elseif (!password_verify($password, $user['password_hash'])) {
+        $error = 'Mot de passe incorrect';
+    } else {
+        
+        SessionManager::setUser([
+            'id' => $user['id'],
+            'email' => $user['email'],
+            'username' => $user['username'],
+            'role' => $user['role_id']
+        ]);
 
-
-}
+        switch ($user['role_id']) {
+            case 1: 
+                header('Location: Admin/Dashboard.php');
+                exit;
+            case 2: 
+                header('Location: Patient/Dashboard.php');
+                exit;
+            case 3: 
+                header('Location: Doctor/D_Dashboard.php');
+                exit;
+        }
+    }
 }
 
 ?>

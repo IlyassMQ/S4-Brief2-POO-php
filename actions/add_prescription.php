@@ -16,6 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'dosage_instructions' => $_POST['dosage_instructions'] ?? null
     ]);
 
-    header('Location: ../public/admin/dashboard.php');
+    header('Location: ../public/Doctor/D_dashboard.php');
     exit;
 }
